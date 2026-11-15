@@ -1,0 +1,55 @@
+name: Build and release deck
+
+# Runs when VERSION changes on main. Builds the deck from birds.csv and the
+# image cache, then publishes it as release v<VERSION>. If that release
+# already exists, nothing is published.
+on:
+  push:
+    branches: [main]
+    paths: [VERSION]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read version
+        id: v
+        run: echo "tag=v$(tr -d '[:space:]' < VERSION)" >> "$GITHUB_OUTPUT"
+
+      - name: Skip if this version is already released
+        id: check
+        run: |
+          if gh release view "${{ steps.v.outputs.tag }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release ${{ steps.v.outputs.tag }} already exists; nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.exists == 'false'
+        with:
+          python-version: "3.12"
+
+      - name: Build deck
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          pip install -r requirements.txt
+          python build.py
+          test -s dist/Birds_of_Kenya.apkg
+
+      - name: Publish release
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          gh release create "${{ steps.v.outputs.tag }}" dist/Birds_of_Kenya.apkg \
+            --target "$GITHUB_SHA" \
+            --title "Birds of Kenya ${{ steps.v.outputs.tag }}" \
+            --notes-file RELEASE_NOTES.md

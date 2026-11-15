@@ -38,6 +38,20 @@ Names and descriptions come from Wikipedia and Wikidata.
 
 If you reuse or adapt this deck, keep the photo credits and share your version under CC BY-SA.
 
+## Building the deck
+
+The deck is built from `birds.csv` (one row per bird, keyed by Wikidata ID) and the scaled photos in `cache/images/`.
+
+```
+pip install -r requirements.txt
+python3 fetch.py   # only needed after adding rows: fetches photo, name and credits
+python3 build.py   # writes dist/Birds_of_Kenya.apkg and regenerates CREDITS.md
+```
+
+To add a bird, add a row with its `qid` and `common` name, a `batch` tag such as `batch_002`, and `active` set to `yes`. Then run `fetch.py` and check `cache/contact_sheet.jpg` for unsuitable photos. To retire a bird, set `active` to `no` instead of deleting the row.
+
+Releases are published automatically. When `VERSION` changes on `main`, a GitHub Action builds the deck and publishes it as release `v<VERSION>`, using `RELEASE_NOTES.md` as the release text.
+
 ## Corrections
 
 Spotted a misidentified bird or a wrong name? Please [open an issue](https://github.com/alxmjo/birds-kenya/issues).
