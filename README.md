@@ -1,6 +1,6 @@
 # Birds of Kenya — Anki deck
 
-An [Anki](https://apps.ankiweb.net/) flashcard deck for learning to recognise 100 common birds of Kenya by sight.
+An [Anki](https://apps.ankiweb.net/) flashcard deck for learning to recognise 150 common birds of Kenya by sight.
 
 Each card shows a photograph on the front. The back gives the common name, the scientific name, the photographer and licence, and a link to the bird's Wikipedia article.
 
@@ -22,7 +22,7 @@ The deck's note and card IDs never change between versions. Import a new release
 
 ## Contents
 
-- 100 species, one card each (Picture → Name)
+- 150 species, one card each (Picture → Name)
 - Image filenames are hashed, so they don't give away the answer
 - Every image comes from Wikimedia Commons, and its author and licence appear on the back of its card
 
@@ -32,7 +32,7 @@ The species list is a hand-picked selection of birds that are widespread or ofte
 
 The deck is released under [Creative Commons Attribution-ShareAlike 4.0](LICENSE) (CC BY-SA 4.0). This covers the card design and the arrangement of the content.
 
-Each photograph keeps its own licence: CC BY, CC BY-SA, or (in one case) GFDL 1.2. [CREDITS.md](CREDITS.md) lists the author, licence and Commons source page for every image. The full GFDL 1.2 text is in [GFDL-1.2.txt](GFDL-1.2.txt).
+Each photograph keeps its own licence: CC0, CC BY, CC BY-SA, or (in three cases) GFDL 1.2. [CREDITS.md](CREDITS.md) lists the author, licence and Commons source page for every image. The full GFDL 1.2 text is in [GFDL-1.2.txt](GFDL-1.2.txt).
 
 Names and descriptions come from Wikipedia and Wikidata.
 
@@ -48,7 +48,9 @@ python3 fetch.py   # only needed after adding rows: fetches photo, name and cred
 python3 build.py   # writes dist/Birds_of_Kenya.apkg and regenerates CREDITS.md
 ```
 
-To add a bird, add a row with its `qid` and `common` name, a `batch` tag such as `batch_002`, and `active` set to `yes`. Then run `fetch.py` and check `cache/contact_sheet.jpg` for unsuitable photos. To retire a bird, set `active` to `no` instead of deleting the row.
+To add a bird, add a row with its `qid` and `common` name, a `batch` tag such as `batch_002`, and `active` set to `yes`. Then run `fetch.py` and check `cache/contact_sheet.jpg` for unsuitable photos. To use a different photo, put its Commons file name in `commons_file`, clear `image`, and run `fetch.py` again. To retire a bird, set `active` to `no` instead of deleting the row.
+
+If Wikimedia rate-limits your machine, push the new rows to a branch named `fetch/<anything>` instead. The *Fetch new birds* workflow then runs `fetch.py` on GitHub's servers and commits the photos and credits back to that branch.
 
 Releases are published automatically. When `VERSION` changes on `main`, a GitHub Action builds the deck and publishes it as release `v<VERSION>`, using `RELEASE_NOTES.md` as the release text.
 
