@@ -1,6 +1,6 @@
 # Image credits
 
-Every photograph in this deck comes from Wikimedia Commons and keeps its original licence. The images have been scaled to about 800 px wide and renamed. No other changes have been made.
+Every photograph in this deck comes from Wikimedia Commons or iNaturalist and keeps its original licence. The images have been scaled to about 800 px wide and renamed. No other changes have been made.
 
 | Bird | Scientific name | Photographer | Licence | Source |
 |---|---|---|---|---|
@@ -106,6 +106,7 @@ Every photograph in this deck comes from Wikimedia Commons and keeps its origina
 | Grey-capped social weaver | *Pseudonigrita arnaudi* | Steve Garvie from Dunfermline, Fife, Scotland | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Pseudonigrita_arnaudi_-Masai_Mara_National_Reserve,_Kenya-8.jpg) |
 | Grey-capped social weaver | *Pseudonigrita arnaudi* | Diego Delso | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Tejedor_social_de_Arnaud_%28Pseudonigrita_arnaudi%29,_parque_nacional_de_Tarangire,_Tanzania,_2024-05-25,_DD_76.jpg) |
 | Grey-headed kingfisher | *Halcyon leucocephala* | Giles Laurent | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:044_Grey-headed_kingfisher_at_Queen_Elizabeth_National_Park_Photo_by_Giles_Laurent.jpg) |
+| Grosbeak weaver | *Amblyospiza albifrons* | Tim McClurg (timmcclurg) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0) | [iNaturalist](https://www.inaturalist.org/observations/408655152) |
 | Hadada ibis | *Bostrychia hagedash* | Diego Delso | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Ibis_hadada_%28Bostrychia_hagedash%29,_parque_nacional_de_Tarangire,_Tanzania,_2024-05-24,_DD_23.jpg) |
 | Hamerkop | *Scopus umbretta* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Hamerkop_%28Scopus_umbretta_umbretta%29_2.jpg) |
 | Hartlaub's turaco | *Tauraco hartlaubi* | Not recorded on Commons (uploaded by Daph Chloe) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Tauraco_hartlaubi.jpg) |

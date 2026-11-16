@@ -107,7 +107,8 @@ LA_PRESET_CHANGES = {"name": "Birds of Kenya: look-alikes", "new": {"perDay": 5,
                      "rev": {"perDay": 200, "bury": True}}
 
 LICENCE_URLS = {"CC BY": "https://creativecommons.org/licenses/by/{v}",
-                "CC BY-SA": "https://creativecommons.org/licenses/by-sa/{v}"}
+                "CC BY-SA": "https://creativecommons.org/licenses/by-sa/{v}",
+                "CC BY-NC": "https://creativecommons.org/licenses/by-nc/{v}"}
 
 
 def read_rows():
@@ -139,16 +140,19 @@ def write_credits(rows):
     rows = rows + [dict(common[p["qid"]], **{k: p[k] for k in ("commons_file", "photographer", "licence", "uploader")})
                    for p in read_csv(PHOTOS_CSV) if p["image"] and p["qid"] in common]
     lines = ["# Image credits", "",
-             "Every photograph in this deck comes from Wikimedia Commons and keeps its original licence. "
+             "Every photograph in this deck comes from Wikimedia Commons or iNaturalist and keeps its original licence. "
              "The images have been scaled to about 800 px wide and renamed. No other changes have been made.", "",
              "| Bird | Scientific name | Photographer | Licence | Source |", "|---|---|---|---|---|"]
     for r in sorted(rows, key=lambda r: r["common"].lower()):
         who = r["photographer"]
         if who == "Unknown":
             who = "Not recorded on Commons" + (f" (uploaded by {r['uploader']})" if r.get("uploader") else "")
-        page = "https://commons.wikimedia.org/wiki/File:" + quote(r["commons_file"].replace(" ", "_"), safe=",")
+        if r["commons_file"].startswith("https://"):  # photo from outside Commons, e.g. iNaturalist
+            page, site = r["commons_file"], "iNaturalist" if "inaturalist" in r["commons_file"] else "Source"
+        else:
+            page, site = "https://commons.wikimedia.org/wiki/File:" + quote(r["commons_file"].replace(" ", "_"), safe=","), "Commons"
         lines.append(f"| {r['common']} | *{r['latin']}* | {who.replace('|', chr(92) + '|')} | "
-                     f"{licence_link(r['licence'])} | [Commons]({page}) |")
+                     f"{licence_link(r['licence'])} | [{site}]({page}) |")
     with open(CREDITS, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
