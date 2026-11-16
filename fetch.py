@@ -10,7 +10,8 @@ For each row without an image it fetches:
     or the Commons file named in `commons_file` if that is filled in by hand,
   - the scientific name from Wikidata (P225), if `latin` is empty,
   - photographer, licence and file name from Commons.
-It then writes cache/contact_sheet.jpg so the new photos can be checked by eye
+It also fetches the extra photos listed in photos.csv (by Commons file name)
+for the look-alike cards. It then writes cache/contact_sheet.jpg so the new photos can be checked by eye
 (reject maps, eggs, illustrations and wrong subjects). Existing rows are untouched.
 """
 import argparse, csv, hashlib, io, os, re, sys, time
@@ -58,22 +59,57 @@ def fetch(row, ent):
         fname = pages[0].get("pageimage")
         if not fname:
             raise RuntimeError(f"no lead image on Wikipedia page '{title}'")
+    img, meta = download(fname, "bird_" + hashlib.sha1(row["qid"].strip().encode()).hexdigest()[:10] + ".jpg")
+    row.update(image=img.filename, commons_file=fname.replace("_", " "), **credit(meta))
+    if not row["licence"].startswith(("CC BY", "CC0", "Public domain", "GFDL")):
+        print(f"  check licence for {row['common']}: {row['licence']}")
+    return img
+
+
+def credit(meta):
+    return dict(photographer=strip_html(meta.get("Artist", {}).get("value")) or "Unknown",
+                licence=strip_html(meta.get("LicenseShortName", {}).get("value")))
+
+
+def download(fname, name):
+    """Fetch a Commons file scaled to WIDTH px, save it as cache/images/<name>, return (image, metadata)."""
     # Commons files are also served through the English Wikipedia API (shared file repository).
     info = get("https://en.wikipedia.org/w/api.php", action="query", titles="File:" + fname,
                prop="imageinfo", iiprop="url|extmetadata", iiurlwidth=WIDTH,
                format="json", formatversion=2).json()["query"]["pages"][0]["imageinfo"][0]
-    meta = info["extmetadata"]
     img = Image.open(io.BytesIO(get(info["thumburl"]).content)).convert("RGB")
     if img.width > WIDTH:
         img = img.resize((WIDTH, round(img.height * WIDTH / img.width)), Image.LANCZOS)
-    name = "bird_" + hashlib.sha1(row["qid"].strip().encode()).hexdigest()[:10] + ".jpg"
     img.save(os.path.join(HERE, "cache", "images", name), quality=85)
-    row.update(image=name, commons_file=fname.replace("_", " "),
-               photographer=strip_html(meta.get("Artist", {}).get("value")) or "Unknown",
-               licence=strip_html(meta.get("LicenseShortName", {}).get("value")))
-    if not row["licence"].startswith(("CC BY", "CC0", "Public domain", "GFDL")):
-        print(f"  check licence for {row['common']}: {row['licence']}")
-    return img
+    img.filename = name
+    return img, info["extmetadata"]
+
+
+def fetch_photos(path):
+    """Fetch the extra photos listed in photos.csv (used by the look-alike cards)."""
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        fields, rows = reader.fieldnames, list(reader)
+    def save():
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)
+    fetched, failed = [], []
+    for r in rows:
+        if r.get("image"):
+            continue
+        fname = r["commons_file"].strip()
+        try:
+            key = r["qid"].strip() + ":" + fname
+            img, meta = download(fname, "bird_" + hashlib.sha1(key.encode()).hexdigest()[:10] + ".jpg")
+            r.update(image=img.filename, **credit(meta))
+            fetched.append((f"{r['qid']} {fname[:28]}", img))
+            print(f"  {r['qid']}: {fname} ({r['licence']})", flush=True)
+            save()
+        except Exception as e:
+            failed.append(fname); print(f"  FAILED {fname}: {e}", flush=True)
+        time.sleep(3)
+    save()
+    return fetched, failed
 
 
 def contact_sheet(items, path):
@@ -92,20 +128,18 @@ def contact_sheet(items, path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default=os.path.join(HERE, "birds.csv"))
+    ap.add_argument("--photos", default=os.path.join(HERE, "photos.csv"))
     args = ap.parse_args()
     with open(args.csv, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         fields, rows = reader.fieldnames, list(reader)
     new = [r for r in rows if r["active"].strip().lower() == "yes" and not r.get("image")]
-    if not new:
-        print("Nothing to fetch.")
-        return
     os.makedirs(os.path.join(HERE, "cache", "images"), exist_ok=True)
-    fetched, failed = [], []
+    fetched, failed = fetch_photos(args.photos) if os.path.exists(args.photos) else ([], [])
     def save():
         with open(args.csv, "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)
-    ents = wikidata([r["qid"].strip() for r in new])
+    ents = wikidata([r["qid"].strip() for r in new]) if new else {}
     for r in new:
         try:
             fetched.append((r["common"], fetch(r, ents[r["qid"].strip()])))
@@ -115,6 +149,8 @@ def main():
             failed.append(r["common"]); print(f"  FAILED {r['common']}: {e}", flush=True)
         time.sleep(3)
     save()
+    if not fetched and not failed:
+        print("Nothing to fetch.")
     if fetched:
         contact_sheet(fetched, os.path.join(HERE, "cache", "contact_sheet.jpg"))
         print("Check cache/contact_sheet.jpg before building.")

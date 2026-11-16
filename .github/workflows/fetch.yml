@@ -2,11 +2,11 @@ name: Fetch new birds
 
 # Runs fetch.py on GitHub's servers and commits the new photos and CSV rows
 # back to the same branch. Use it when Wikimedia rate-limits the machine you
-# build on: push new rows in birds.csv to a branch named fetch/<anything>.
+# build on: push new rows in birds.csv or photos.csv to a branch named fetch/<anything>.
 on:
   push:
     branches: ['fetch/**']
-    paths: [birds.csv]
+    paths: [birds.csv, photos.csv]
   workflow_dispatch:
 
 permissions:
@@ -33,7 +33,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add birds.csv cache/images
+          git add birds.csv photos.csv cache/images
           git diff --cached --quiet || git commit -m "Fetch photos for new birds"
           git push
 
