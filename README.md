@@ -23,6 +23,7 @@ The deck's note and card IDs never change between versions. Import a new release
 ## Contents
 
 - 150 species, one card each (Picture → Name)
+- A **Look-alikes** subdeck that trains telling similar birds apart: flamingos, collared doves, hornbills, starlings, sparrows, fiscals, robin-chats, sunbirds, raptors, vultures and lapwings. Each card shows a photo and the names of the birds in its group. The back gives the answer, a short field mark and photos of the other birds in the group. These cards use different photos from the main deck, and the photo changes from day to day. The subdeck has its own settings (5 new cards a day) and is best started once the main cards for those birds are familiar.
 - Image filenames are hashed, so they don't give away the answer
 - Every image comes from Wikimedia Commons; its author and licence are listed in [CREDITS.md](CREDITS.md), linked from the deck description in Anki
 
@@ -49,6 +50,14 @@ python3 build.py   # writes dist/Birds_of_Kenya.apkg and regenerates CREDITS.md
 ```
 
 To add a bird, add a row with its `qid` and `common` name, a `batch` tag such as `batch_002`, and `active` set to `yes`. Then run `fetch.py` and check `cache/contact_sheet.jpg` for unsuitable photos. To use a different photo, put its Commons file name in `commons_file`, clear `image`, and run `fetch.py` again. To retire a bird, set `active` to `no` instead of deleting the row.
+
+### Look-alike cards
+
+`lookalikes.csv` lists the groups: one row per bird, with a `group_id`, a `slot` (1–6, fixed for good, because it decides which card holds that bird's review history) and the field mark shown on the back. Each group becomes one note with one card per bird, so the birds in a group are buried from each other and come up on different days.
+
+The look-alike photos are listed in `photos.csv` by Commons file name, usually three per bird, and never the photo the main deck uses. `fetch.py` downloads any row without an `image`. To find photos, list the birds in `candidates.txt` and run `candidates.py`. It draws numbered contact sheets in `cache/candidates/`; running it again for a bird shows only photos not offered before. If Wikimedia rate-limits your machine, push `candidates.txt` to a branch named `candidates/<anything>` and the *Find photo candidates* workflow runs it on GitHub. Check file names as well as thumbnails: Commons titles often reveal a captive bird, a specimen, or a photo taken outside the species' range.
+
+`python3 build.py --lookalikes-only` writes `dist/Birds_of_Kenya_lookalikes_test.apkg` with only the Look-alikes subdeck, for testing.
 
 If Wikimedia rate-limits your machine, push the new rows to a branch named `fetch/<anything>` instead. The *Fetch new birds* workflow then runs `fetch.py` on GitHub's servers and commits the photos and credits back to that branch.
 
