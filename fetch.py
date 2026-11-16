@@ -7,6 +7,7 @@ Add a row with just `qid` and `common` (plus `batch`, `active` = yes), then run:
 
 For each row without an image it fetches:
   - the lead image of the English Wikipedia article (scaled to 800 px wide),
+    or the Commons file named in `commons_file` if that is filled in by hand,
   - the scientific name from Wikidata (P225), if `latin` is empty,
   - photographer, licence and file name from Commons.
 It then writes cache/contact_sheet.jpg so the new photos can be checked by eye
@@ -24,12 +25,12 @@ S.headers.update(UA)
 
 
 def get(url, **params):
-    for i in range(10):
+    for i in range(15):
         r = S.get(url, params=params or None, timeout=60)
         if r.status_code != 429:
             r.raise_for_status()
             return r
-        time.sleep(int(r.headers.get("Retry-After", 0) or 0) or 5 * (i + 1))
+        time.sleep(max(int(r.headers.get("Retry-After", 0) or 0), 30 * (i + 1)))
     r.raise_for_status()
 
 
@@ -37,26 +38,35 @@ def strip_html(s):
     return re.sub(r"<[^>]+>", "", s or "").strip()
 
 
-def fetch(row):
-    qid = row["qid"].strip()
-    ent = get("https://www.wikidata.org/w/api.php", action="wbgetentities", ids=qid,
-              props="sitelinks|claims", sitefilter="enwiki", format="json").json()["entities"][qid]
+def wikidata(qids):
+    """Fetch Wikidata entities in batches of 50, to keep the number of requests low."""
+    out = {}
+    for i in range(0, len(qids), 50):
+        out.update(get("https://www.wikidata.org/w/api.php", action="wbgetentities", ids="|".join(qids[i:i + 50]),
+                       props="sitelinks|claims", sitefilter="enwiki", format="json").json()["entities"])
+    return out
+
+
+def fetch(row, ent):
     title = ent["sitelinks"]["enwiki"]["title"]
     if not row.get("latin"):
         row["latin"] = ent["claims"]["P225"][0]["mainsnak"]["datavalue"]["value"]
-    pages = get("https://en.wikipedia.org/w/api.php", action="query", prop="pageimages", piprop="name",
-                titles=title, redirects=1, format="json", formatversion=2).json()["query"]["pages"]
-    fname = pages[0].get("pageimage")
+    fname = row.get("commons_file", "").strip()  # set by hand to override the lead image
     if not fname:
-        raise RuntimeError(f"no lead image on Wikipedia page '{title}'")
-    info = get("https://commons.wikimedia.org/w/api.php", action="query", titles="File:" + fname,
+        pages = get("https://en.wikipedia.org/w/api.php", action="query", prop="pageimages", piprop="name",
+                    titles=title, redirects=1, format="json", formatversion=2).json()["query"]["pages"]
+        fname = pages[0].get("pageimage")
+        if not fname:
+            raise RuntimeError(f"no lead image on Wikipedia page '{title}'")
+    # Commons files are also served through the English Wikipedia API (shared file repository).
+    info = get("https://en.wikipedia.org/w/api.php", action="query", titles="File:" + fname,
                prop="imageinfo", iiprop="url|extmetadata", iiurlwidth=WIDTH,
                format="json", formatversion=2).json()["query"]["pages"][0]["imageinfo"][0]
     meta = info["extmetadata"]
     img = Image.open(io.BytesIO(get(info["thumburl"]).content)).convert("RGB")
     if img.width > WIDTH:
         img = img.resize((WIDTH, round(img.height * WIDTH / img.width)), Image.LANCZOS)
-    name = "bird_" + hashlib.sha1(qid.encode()).hexdigest()[:10] + ".jpg"
+    name = "bird_" + hashlib.sha1(row["qid"].strip().encode()).hexdigest()[:10] + ".jpg"
     img.save(os.path.join(HERE, "cache", "images", name), quality=85)
     row.update(image=name, commons_file=fname.replace("_", " "),
                photographer=strip_html(meta.get("Artist", {}).get("value")) or "Unknown",
@@ -92,15 +102,19 @@ def main():
         return
     os.makedirs(os.path.join(HERE, "cache", "images"), exist_ok=True)
     fetched, failed = [], []
+    def save():
+        with open(args.csv, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)
+    ents = wikidata([r["qid"].strip() for r in new])
     for r in new:
         try:
-            fetched.append((r["common"], fetch(r)))
-            print(f"  {r['common']}: {r['commons_file']} ({r['licence']})")
+            fetched.append((r["common"], fetch(r, ents[r["qid"].strip()])))
+            print(f"  {r['common']}: {r['commons_file']} ({r['licence']})", flush=True)
+            save()  # keep progress if the run is interrupted
         except Exception as e:
-            failed.append(r["common"]); print(f"  FAILED {r['common']}: {e}")
-        time.sleep(1)
-    with open(args.csv, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)
+            failed.append(r["common"]); print(f"  FAILED {r['common']}: {e}", flush=True)
+        time.sleep(3)
+    save()
     if fetched:
         contact_sheet(fetched, os.path.join(HERE, "cache", "contact_sheet.jpg"))
         print("Check cache/contact_sheet.jpg before building.")
