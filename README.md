@@ -1,6 +1,6 @@
 # Birds of Kenya — Anki deck
 
-An [Anki](https://apps.ankiweb.net/) flashcard deck for learning to recognise 150 common birds of Kenya by sight.
+An [Anki](https://apps.ankiweb.net/) flashcard deck for learning to recognise 151 common birds of Kenya by sight.
 
 Each card shows a photograph on the front. The back gives the common name, the scientific name and a link to the bird's Wikipedia article. Photo credits are listed in [CREDITS.md](CREDITS.md) rather than on the cards, to keep reviews uncluttered.
 
@@ -22,10 +22,10 @@ The deck's note and card IDs never change between versions. Import a new release
 
 ## Contents
 
-- 150 species, one card each (Picture → Name)
+- 151 species, one card each (Picture → Name)
 - A **Look-alikes** subdeck that trains telling similar birds apart: flamingos, collared doves, hornbills, starlings, sparrows, fiscals, robin-chats, sunbirds, weavers, raptors, vultures and lapwings. Each card shows a photo and the names of the birds in its group. The back gives the answer, a short field mark and photos of the other birds in the group. These cards use different photos from the main deck, and the photo changes from day to day. The subdeck has its own settings (5 new cards a day) and is best started once the main cards for those birds are familiar.
 - Image filenames are hashed, so they don't give away the answer
-- Every image comes from Wikimedia Commons; its author and licence are listed in [CREDITS.md](CREDITS.md), linked from the deck description in Anki
+- Every image comes from Wikimedia Commons, apart from one from iNaturalist; its author and licence are listed in [CREDITS.md](CREDITS.md), linked from the deck description in Anki
 
 The species list is a hand-picked selection of birds that are widespread or often seen in Kenya. It is not a ranking based on sighting data.
 
@@ -33,11 +33,11 @@ The species list is a hand-picked selection of birds that are widespread or ofte
 
 The deck is released under [Creative Commons Attribution-ShareAlike 4.0](LICENSE) (CC BY-SA 4.0). This covers the card design and the arrangement of the content.
 
-Each photograph keeps its own licence: CC0, CC BY, CC BY-SA, or (in three cases) GFDL 1.2. [CREDITS.md](CREDITS.md) lists the author, licence and Commons source page for every image. The full GFDL 1.2 text is in [GFDL-1.2.txt](GFDL-1.2.txt).
+Each photograph keeps its own licence: CC0, CC BY, CC BY-SA, (in three cases) GFDL 1.2, or (in one case, the Grosbeak weaver) CC BY-NC 4.0. [CREDITS.md](CREDITS.md) lists the author, licence and source page for every image. The full GFDL 1.2 text is in [GFDL-1.2.txt](GFDL-1.2.txt).
 
 Names and descriptions come from Wikipedia and Wikidata.
 
-If you reuse or adapt this deck, keep the photo credits and share your version under CC BY-SA.
+If you reuse or adapt this deck, keep the photo credits and share your version under CC BY-SA. The Grosbeak weaver photo is licensed for non-commercial use only, so remove or replace it before any commercial use.
 
 ## Building the deck
 

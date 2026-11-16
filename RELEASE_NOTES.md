@@ -1,4 +1,6 @@
-150 common Kenyan birds, one Picture → Name card each, plus a Look-alikes subdeck.
+151 common Kenyan birds, one Picture → Name card each, plus a Look-alikes subdeck.
+
+**New in v1.6:** the Grosbeak weaver (tagged `batch_003`). Its photo comes from iNaturalist under CC BY-NC 4.0, so it may not be used commercially; see the README.
 
 **New in v1.5:** two new Look-alikes groups for weavers. One covers the yellow masked weavers (Village, Speke's and Baglafecht), the other the brown weavers (White-browed sparrow-weaver and Grey-capped social weaver). That makes 5 more cards.
 
