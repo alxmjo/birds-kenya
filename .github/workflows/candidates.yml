@@ -1,0 +1,36 @@
+name: Find photo candidates
+
+# Runs candidates.py on GitHub's servers and commits the contact sheets back
+# to the same branch. Use it when Wikimedia rate-limits the machine you build
+# on: push candidates.txt to a branch named candidates/<anything>.
+on:
+  push:
+    branches: ['candidates/**']
+    paths: [candidates.txt, candidates.py]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Find candidates and draw contact sheets
+        run: |
+          pip install -r requirements.txt
+          python candidates.py
+
+      - name: Commit contact sheets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cache/candidates
+          git diff --cached --quiet || git commit -m "Add photo candidates"
+          git push
