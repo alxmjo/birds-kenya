@@ -1,3 +1,2 @@
 # group: birds (common names from birds.csv)
-round2-sunbirds: Tacazze sunbird, Eastern double-collared sunbird
-round2-others: Northern red-billed hornbill, Von der Decken's hornbill, White-backed vulture
+weavers: Village weaver, Speke's weaver, Baglafecht weaver, White-browed sparrow-weaver, Grey-capped social weaver
