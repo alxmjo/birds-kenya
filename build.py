@@ -80,7 +80,9 @@ def la_template(i):
         "name": f"Look-alike → Name ({i})",
         "qfmt": f'{{{{#Photos{i}}}}}<div class="pics">{{{{Photos{i}}}}}</div>'
                 f'<div class="choices">{{{{Choices}}}}</div>{PICK_JS}{{{{/Photos{i}}}}}',
-        "afmt": (f'{{{{FrontSide}}}}<hr id=answer>{{{{Name{i}}}}}<br><i>{{{{Latin{i}}}}}</i>'
+        # Plain <hr>, not <hr id=answer>: Anki scrolls to #answer, which on these tall
+        # backs would scroll the photo off the top of the screen.
+        "afmt": (f'{{{{FrontSide}}}}<hr>{{{{Name{i}}}}}<br><i>{{{{Latin{i}}}}}</i>'
                  f'<div class="mark">{{{{Mark{i}}}}}</div><div class="compare">{others}</div>'
                  f'<div class="credits"><a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/{{{{QID{i}}}}}">'
                  f'Wikipedia</a></div>{PICK_JS}'),
