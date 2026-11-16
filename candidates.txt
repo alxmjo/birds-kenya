@@ -1,15 +1,3 @@
 # group: birds (common names from birds.csv)
-flamingos: Greater flamingo, Lesser flamingo
-doves: Ring-necked dove, Red-eyed dove, Mourning collared dove, Laughing dove
-hornbills: Von der Decken's hornbill, Northern red-billed hornbill, Eastern yellow-billed hornbill
-starlings: Superb starling, Hildebrandt's starling
-sparrows: House sparrow, Kenya rufous sparrow, Northern grey-headed sparrow
-fiscals: Northern fiscal, Long-tailed fiscal, Grey-backed fiscal
-robin-chats: Cape robin-chat, Rüppell's robin-chat, White-browed robin-chat
-sunbirds-yellow: Variable sunbird, Collared sunbird
-sunbirds-bronze: Bronze sunbird, Tacazze sunbird
-sunbirds-dark: Amethyst sunbird, Scarlet-chested sunbird
-sunbirds-redbreast: Beautiful sunbird, Eastern double-collared sunbird
-brown-raptors: Tawny eagle, Yellow-billed kite
-grey-raptors: Eastern chanting goshawk, Black-winged kite
-vultures: White-backed vulture, Rüppell's vulture
+round2-sunbirds: Tacazze sunbird, Eastern double-collared sunbird
+round2-others: Northern red-billed hornbill, Von der Decken's hornbill, White-backed vulture

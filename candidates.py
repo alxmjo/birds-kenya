@@ -10,10 +10,12 @@ Names must match the `common` column of birds.csv. Then run
     python3 candidates.py
 
 For each bird it collects up to 16 photos from the Commons category named after
-the scientific name, plus a Commons search, skipping the photo the main deck
+the scientific name (and its subcategories), plus Commons searches for the
+scientific and common names, skipping the photo the main deck
 already uses and file names that suggest zoos, eggs, maps or specimens. It writes
 cache/candidates/sheet_<group>.jpg (numbered thumbnails) and
-cache/candidates/candidates.json (the file names behind the numbers). Chosen
+cache/candidates/candidates.json (the file names behind the numbers). Running
+it again for the same bird shows only photos not offered before. Chosen
 files go into photos.csv; fetch.py then downloads them.
 
 If Wikimedia rate-limits your machine, push candidates.txt to a branch named
@@ -44,17 +46,28 @@ def get(url, **params):
     r.raise_for_status()
 
 
-def candidates(latin, main_file, n=16):
+def category_files(cat, depth=1):
+    """Files in a Commons category and (to the given depth) its subcategories."""
+    members = get(API, action="query", list="categorymembers", cmtitle=cat, cmtype="file|subcat", cmlimit=200,
+                  format="json").json()["query"]["categorymembers"]
+    files = [m["title"] for m in members if m["ns"] == 6]
+    for m in members:
+        if m["ns"] == 14 and depth > 0:
+            files += category_files(m["title"], depth - 1)
+    return files
+
+
+def candidates(latin, common, main_file, seen=(), n=16):
     titles = []
     try:
-        titles += [m["title"] for m in get(API, action="query", list="categorymembers", cmtitle="Category:" + latin,
-                                           cmtype="file", cmlimit=50, format="json").json()["query"]["categorymembers"]]
+        titles += category_files("Category:" + latin)
     except Exception as e:
         print(f"  no category for {latin}: {e}")
-    titles += [m["title"] for m in get(API, action="query", list="search", srnamespace=6, srlimit=40, format="json",
-                                       srsearch=f'"{latin}" filetype:bitmap').json()["query"]["search"]
-               if m["title"] not in titles]
-    titles = [t for t in titles if t.lower().endswith((".jpg", ".jpeg"))
+    for q in (latin, common):
+        titles += [m["title"] for m in get(API, action="query", list="search", srnamespace=6, srlimit=40, format="json",
+                                           srsearch=f'"{q}" filetype:bitmap').json()["query"]["search"]]
+    titles = list(dict.fromkeys(titles))
+    titles = [t for t in titles if t.lower().endswith((".jpg", ".jpeg")) and t[5:] not in seen
               and not any(s in t.lower() for s in SKIP) and t[5:] != main_file][:n]
     if not titles:
         return []
@@ -90,7 +103,8 @@ def sheet(birds, path, w=200, h=175, cols=8):
 def main():
     birds = {r["common"]: r for r in csv.DictReader(open(os.path.join(HERE, "birds.csv"), encoding="utf-8"))}
     os.makedirs(OUT, exist_ok=True)
-    index = {}
+    path = os.path.join(OUT, "candidates.json")
+    index = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
     for line in open(os.path.join(HERE, "candidates.txt"), encoding="utf-8"):
         if ":" not in line or line.startswith("#"):
             continue
@@ -98,12 +112,14 @@ def main():
         found = []
         for name in [n.strip() for n in names.split(",") if n.strip()]:
             b = birds[name]
-            items = candidates(b["latin"], b["commons_file"].replace("_", " "))
+            # A second run lists only photos not shown before, so more candidates can be requested.
+            seen = set(index.get(name, {}).get("files", [])) | set(index.get(name, {}).get("seen", []))
+            items = candidates(b["latin"], name, b["commons_file"].replace("_", " "), seen)
             print(f"  {group.strip()}: {name}: {len(items)} candidates", flush=True)
             found.append((name, items))
-            index[name] = {"qid": b["qid"], "files": [f for f, _ in items]}
+            index[name] = {"qid": b["qid"], "files": [f for f, _ in items], "seen": sorted(seen)}
         sheet(found, os.path.join(OUT, f"sheet_{group.strip()}.jpg"))
-    with open(os.path.join(OUT, "candidates.json"), "w", encoding="utf-8") as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(index, f, indent=1, ensure_ascii=False)
 
 
