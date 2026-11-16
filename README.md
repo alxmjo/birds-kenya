@@ -23,7 +23,7 @@ The deck's note and card IDs never change between versions. Import a new release
 ## Contents
 
 - 150 species, one card each (Picture → Name)
-- A **Look-alikes** subdeck that trains telling similar birds apart: flamingos, collared doves, hornbills, starlings, sparrows, fiscals, robin-chats, sunbirds, raptors, vultures and lapwings. Each card shows a photo and the names of the birds in its group. The back gives the answer, a short field mark and photos of the other birds in the group. These cards use different photos from the main deck, and the photo changes from day to day. The subdeck has its own settings (5 new cards a day) and is best started once the main cards for those birds are familiar.
+- A **Look-alikes** subdeck that trains telling similar birds apart: flamingos, collared doves, hornbills, starlings, sparrows, fiscals, robin-chats, sunbirds, weavers, raptors, vultures and lapwings. Each card shows a photo and the names of the birds in its group. The back gives the answer, a short field mark and photos of the other birds in the group. These cards use different photos from the main deck, and the photo changes from day to day. The subdeck has its own settings (5 new cards a day) and is best started once the main cards for those birds are familiar.
 - Image filenames are hashed, so they don't give away the answer
 - Every image comes from Wikimedia Commons; its author and licence are listed in [CREDITS.md](CREDITS.md), linked from the deck description in Anki
 
