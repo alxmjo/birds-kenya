@@ -37,8 +37,9 @@ MODEL = genanki.Model(
     templates=[{
         "name": "Picture → Name",
         "qfmt": "{{Picture}}",
+        # Photo credits are kept in the Credits field and in CREDITS.md, but not shown during review.
         "afmt": ('{{FrontSide}}<hr id=answer>{{Common}}<br><i>{{Latin}}</i>'
-                 '<div class="credits">{{Credits}}<br>'
+                 '<div class="credits">'
                  '<a href="https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/{{QID}}">Wikipedia</a></div>'),
     }],
     css=CSS,
@@ -121,7 +122,8 @@ def main():
     if len({r["qid"] for r in rows}) != len(rows):
         sys.exit("Duplicate QIDs in birds.csv")
 
-    deck = genanki.Deck(DECK_ID, "Birds of Kenya")
+    deck = genanki.Deck(DECK_ID, "Birds of Kenya", description=(
+        'Photo credits and licences: <a href="https://github.com/alxmjo/birds-kenya/blob/main/CREDITS.md">CREDITS.md</a>'))
     for r in rows:
         deck.add_note(genanki.Note(
             model=MODEL,

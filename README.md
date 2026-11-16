@@ -2,7 +2,7 @@
 
 An [Anki](https://apps.ankiweb.net/) flashcard deck for learning to recognise 150 common birds of Kenya by sight.
 
-Each card shows a photograph on the front. The back gives the common name, the scientific name, the photographer and licence, and a link to the bird's Wikipedia article.
+Each card shows a photograph on the front. The back gives the common name, the scientific name and a link to the bird's Wikipedia article. Photo credits are listed in [CREDITS.md](CREDITS.md) rather than on the cards, to keep reviews uncluttered.
 
 ## Download
 
@@ -24,7 +24,7 @@ The deck's note and card IDs never change between versions. Import a new release
 
 - 150 species, one card each (Picture → Name)
 - Image filenames are hashed, so they don't give away the answer
-- Every image comes from Wikimedia Commons, and its author and licence appear on the back of its card
+- Every image comes from Wikimedia Commons; its author and licence are listed in [CREDITS.md](CREDITS.md), linked from the deck description in Anki
 
 The species list is a hand-picked selection of birds that are widespread or often seen in Kenya. It is not a ranking based on sighting data.
 

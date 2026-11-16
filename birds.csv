@@ -1,6 +1,6 @@
 qid,common,latin,photographer,licence,commons_file,image,batch,active,uploader
 Q790596,Common bulbul,Pycnonotus barbatus,Charles J. Sharp,CC BY-SA 4.0,Common bulbul (Pycnonotus barbatus barbatus).jpg,bird_118de1f06f.jpg,batch_001,yes,
-Q875885,Speckled mousebird,Colius striatus,spacebirdy(also known as geimfyglið (:&gt; )=| made with Sternenlaus-spirit),CC BY-SA 3.0,Colius striatus - Wüstenhaus.jpg,bird_431acd075e.jpg,batch_001,yes,
+Q875885,Speckled mousebird,Colius striatus,spacebirdy,CC BY-SA 3.0,Colius striatus - Wüstenhaus.jpg,bird_431acd075e.jpg,batch_001,yes,
 Q608635,Superb starling,Lamprotornis superbus,Charles J. Sharp,CC BY-SA 4.0,Superb starling (Lamprotornis superbus).jpg,bird_cb8762a070.jpg,batch_001,yes,
 Q949603,Pied crow,Corvus albus,"Frank Vassen from Brussels, Belgium",CC BY 2.0,"Corvus albus -Etosha National Park, Namibia-8.jpg",bird_86448416f9.jpg,batch_001,yes,
 Q301777,Hadada ibis,Bostrychia hagedash,Diego Delso,CC BY-SA 4.0,"Ibis hadada (Bostrychia hagedash), parque nacional de Tarangire, Tanzania, 2024-05-24, DD 23.jpg",bird_68017d6f82.jpg,batch_001,yes,
@@ -51,11 +51,11 @@ Q222081,White-browed robin-chat,Cossypha heuglini,Alan Manson,CC BY-SA 2.0,White
 Q2225989,Abyssinian thrush,Turdus abyssinicus,"Lip Kee from Singapore, Republic of Singapore",CC BY-SA 2.0,Abyssinian Thrush (Turdus abyssinicus) (16341647185).jpg,bird_90cff24452.jpg,batch_001,yes,
 Q1315689,African stonechat,Saxicola torquatus,Derek Keats from South Africa,CC BY-SA 2.0,Saxicola torquatus -South Africa -male-8 (3).jpg,bird_8108524f8d.jpg,batch_001,yes,
 Q1587789,Northern anteater chat,Myrmecocichla aethiops,DickDaniels (https://carolinabirds.org/),CC BY-SA 3.0,Northern Anteater-Chat RWD7.jpg,bird_ec34fb24a6.jpg,batch_001,yes,
-Q3727643,Capped wheatear,Oenanthe pileata,https://www.flickr.com/photos/dkeats,CC BY 2.0,"Capped Wheatear, Oenanthe pileata at Suikerbosrand Nature Reserve, Gauteng, South Africa.jpg",bird_516d5bdba8.jpg,batch_001,yes,
+Q3727643,Capped wheatear,Oenanthe pileata,Derek Keats,CC BY 2.0,"Capped Wheatear, Oenanthe pileata at Suikerbosrand Nature Reserve, Gauteng, South Africa.jpg",bird_516d5bdba8.jpg,batch_001,yes,
 Q3726284,Tawny-flanked prinia,Prinia subflava,Bernard DUPONT from FRANCE,CC BY-SA 2.0,Tawny-flanked Prinia (Prinia subflava) (11465162445).jpg,bird_c5bec1dc11.jpg,batch_001,yes,
 Q2225630,Rattling cisticola,Cisticola chiniana,Charles J. Sharp,CC BY-SA 4.0,Rattling cisticola (Cisticola chiniana victoria) Serengeti.jpg,bird_cc6728240a.jpg,batch_001,yes,
 Q2934644,Grey-backed camaroptera,Camaroptera brevicaudata,"Derek Keats from Johannesburg, South Africa",CC BY 2.0,"Grey-backed Camaroptera, Camaroptera brachyura, at Pilanesberg National Park, South Africa (15808970908).jpg",bird_d2b732243a.jpg,batch_001,yes,
-Q2225511,Yellow-breasted apalis,Apalis flavida,https://www.flickr.com/photos/dkeats,CC BY 2.0,"Yellow-breasted apalis, Apalis flavida.jpg",bird_9bbce91d3b.jpg,batch_001,yes,
+Q2225511,Yellow-breasted apalis,Apalis flavida,Derek Keats,CC BY 2.0,"Yellow-breasted apalis, Apalis flavida.jpg",bird_9bbce91d3b.jpg,batch_001,yes,
 Q900701,Arrow-marked babbler,Turdoides jardineii,"Derek Keats from Johannesburg, South Africa",CC BY 2.0,"Arrow-marked Babbler,Turdoides jardineii, at Hwange National Park, Zimbabwe (35097040664).jpg",bird_98af630704.jpg,batch_001,yes,
 Q1589193,Black-headed oriole,Oriolus larvatus,Diego Delso,CC BY-SA 4.0,"Oropéndola enmascarada (Oriolus larvatus), parque nacional Kruger, Sudáfrica, 2018-07-25, DD 29 (recortada).jpg",bird_50d00c3a35.jpg,batch_001,yes,
 Q1317282,Black-backed puffback,Dryoscopus cubla,"Lip Kee from Singapore, Republic of Singapore",CC BY-SA 2.0,"690V4679 - Flickr - Lip Kee, crop.jpg",bird_4e0379b3da.jpg,batch_001,yes,
@@ -100,17 +100,7 @@ Q242369,Lesser flamingo,Phoeniconaias minor,Sumita Roy Dutta,CC BY-SA 4.0,Flock 
 Q217497,African fish eagle,Haliaeetus vocifer,"Derek Keats from Johannesburg, South Africa",CC BY 2.0,"African fish eagle, Haliaeetus vocifer, at Chobe National Park, Botswana (33516612831).jpg",bird_2a3bb542dc.jpg,batch_001,yes,
 Q760623,Augur buzzard,Buteo augur,Charles J. Sharp,CC BY-SA 4.0,Augur buzzard (Buteo augur).jpg,bird_ed97fb12f9.jpg,batch_001,yes,
 Q131709,Little egret,Egretta garzetta,Shantanu Kuveskar,CC BY-SA 4.0,Little egret (Egretta garzetta) Photograph by Shantanu Kuveskar.jpg,bird_254c046736.jpg,batch_002,yes,
-Q220578,Black-headed heron,Ardea melanocephala,"Muhammad Mahdi Karim Facebook
-
-
-
-
-
-The making of this document was supported by Wikimedia CH. (Submit your project!)
-For all the files concerned, please see the category Supported by Wikimedia CH.
-
-
-العربية ∙ বাংলা ∙ čeština ∙ Deutsch ∙ English ∙ Esperanto ∙ español ∙ français ∙ galego ∙ हिन्दी ∙ magyar ∙ italiano ∙ 日本語 ∙ македонски ∙ Nederlands ∙ português do Brasil ∙ rumantsch ∙ русский ∙ sicilianu ∙ slovenščina ∙ தமிழ் ∙ українська ∙ 中文 ∙ +/−",GFDL 1.2,Black-headed Heron (Ardea melanocephala).jpg,bird_3916ad7836.jpg,batch_002,yes,
+Q220578,Black-headed heron,Ardea melanocephala,Muhammad Mahdi Karim,GFDL 1.2,Black-headed Heron (Ardea melanocephala).jpg,bird_3916ad7836.jpg,batch_002,yes,
 Q655510,Yellow-billed stork,Mycteria ibis,Marcusajohn63,CC BY 4.0,Yellow-billed Stork.jpg,bird_f143da9197.jpg,batch_002,yes,
 Q26902,African openbill,Anastomus lamelligerus,Bernard Gagnon,CC BY-SA 4.0,"African openbill, Zimbabwe, crop.jpg",bird_3521a825d0.jpg,batch_002,yes,
 Q179863,Greater flamingo,Phoenicopterus roseus,Giles Laurent,CC BY-SA 4.0,010 Greater flamingos male and female in the Camargue during mating season Photo by Giles Laurent.jpg,bird_39b37394b3.jpg,batch_002,yes,
@@ -141,7 +131,7 @@ Q912111,Northern red-billed hornbill,Tockus erythrorhynchus,"Rod Waddington from
 Q128617,Eastern yellow-billed hornbill,Tockus flavirostris,Francesco Veronesi from Italy,CC BY-SA 2.0,Eastern Yellow-billed Hornbill - Shaba Kenya.jpg,bird_2755b050a5.jpg,batch_002,yes,
 Q267565,Red-and-yellow barbet,Trachyphonus erythrocephalus,Ikiwaner,GFDL 1.2,Lake Manyara Bartvogel.jpg,bird_9220c7d211.jpg,batch_002,yes,
 Q606886,Cardinal woodpecker,Dendropicos fuscescens,"Derek Keats from Johannesburg, South Africa",CC BY 2.0,"Cardinal Woodpecker - MALE, Dendropicos fuscescens at Pilanesberg National Park, Northwest Province, South Africa (14905279159).jpg",bird_f371b16033.jpg,batch_002,yes,
-Q27075606,Golden-breasted starling,Lamprotornis regius,Photo by and (C)2007 Derek Ramsey (Ram-Man),CC BY-SA 2.5,Golden-breasted Starling Cosmopsarus regius Back 1000px.jpg,bird_1e65c31eed.jpg,batch_002,yes,
+Q27075606,Golden-breasted starling,Lamprotornis regius,Derek Ramsey (Ram-Man),CC BY-SA 2.5,Golden-breasted Starling Cosmopsarus regius Back 1000px.jpg,bird_1e65c31eed.jpg,batch_002,yes,
 Q694756,Violet-backed starling,Cinnyricinclus leucogaster,Charles J. Sharp,CC BY-SA 4.0,Violet-backed starling (Cinnyricinclus leucogaster verreauxi) male.jpg,bird_354aa068e0.jpg,batch_002,yes,
 Q1466229,Yellow-billed oxpecker,Buphagus africanus,"Steve Garvie from Dunfermline, Fife, Scotland",CC BY-SA 2.0,Flickr - Rainbirder - Yellow-billed Oxpecker (Buphagus africanus).jpg,bird_98a61948f4.jpg,batch_002,yes,
 Q507383,House crow,Corvus splendens,Pkspks,CC BY 4.0,Corvus splendens.jpg,bird_24a4fd67ea.jpg,batch_002,yes,
@@ -156,6 +146,6 @@ Q956176,Long-tailed paradise whydah,Vidua paradisaea,Charles J. Sharp,CC BY-SA 4
 Q28837056,Cape robin-chat,Dessonornis caffer,Alan Manson,CC BY-SA 2.0,Cape Robin-Chat (Cossypha caffra)2.jpg,bird_fd915f9972.jpg,batch_002,yes,
 Q2225549,White-browed scrub robin,Cercotrichas leucophrys,Alandmanson,CC BY-SA 4.0,"Cercotrichas leucophrys 2016 10 11 12 04 18 8926, crop.jpg",bird_05ad92330b.jpg,batch_002,yes,
 Q1091280,Northern pied babbler,Turdoides hypoleuca,Dominic Sherony,CC BY-SA 2.0,Northern-pied Babbler (Turdoides hypoleuca) (46578061171).jpg,bird_de186edf03.jpg,batch_002,yes,
-Q1317356,Brown-crowned tchagra,Tchagra australis,https://www.flickr.com/photos/dkeats/,CC BY 2.0,Brown-crowned Tchagra.jpg,bird_98d8f3a3ee.jpg,batch_002,yes,
+Q1317356,Brown-crowned tchagra,Tchagra australis,Derek Keats,CC BY 2.0,Brown-crowned Tchagra.jpg,bird_98d8f3a3ee.jpg,batch_002,yes,
 Q1193338,Long-tailed fiscal,Lanius cabanisi,Hobbyfotowiki,CC0,Long-tailed fiscal (Lanius cabanisi).jpg,bird_b0d06a6856.jpg,batch_002,yes,
 Q16060373,Kikuyu white-eye,Zosterops kikuyuensis,Forest Botial-Jarvis,CC BY 4.0,Zosterops kikuyuensis - Forest Botial-Jarvis - 716310739.jpeg,bird_a437f659b2.jpg,batch_002,yes,

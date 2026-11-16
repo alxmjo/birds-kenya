@@ -26,17 +26,7 @@ Every photograph in this deck comes from Wikimedia Commons and keeps its origina
 | Bateleur | *Terathopius ecaudatus* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Bateleur_%28Terathopius_ecaudatus%29_male_Serengeti.jpg) |
 | Beautiful sunbird | *Cinnyris pulchellus* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Beautiful_sunbird_%28Cinnyris_pulchellus_pulchellus%29_male.jpg) |
 | Black-backed puffback | *Dryoscopus cubla* | Lip Kee from Singapore, Republic of Singapore | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:690V4679_-_Flickr_-_Lip_Kee,_crop.jpg) |
-| Black-headed heron | *Ardea melanocephala* | Muhammad Mahdi Karim Facebook
-
-
-
-
-
-The making of this document was supported by Wikimedia CH. (Submit your project!)
-For all the files concerned, please see the category Supported by Wikimedia CH.
-
-
-العربية ∙ বাংলা ∙ čeština ∙ Deutsch ∙ English ∙ Esperanto ∙ español ∙ français ∙ galego ∙ हिन्दी ∙ magyar ∙ italiano ∙ 日本語 ∙ македонски ∙ Nederlands ∙ português do Brasil ∙ rumantsch ∙ русский ∙ sicilianu ∙ slovenščina ∙ தமிழ் ∙ українська ∙ 中文 ∙ +/− | [GFDL 1.2](GFDL-1.2.txt) | [Commons](https://commons.wikimedia.org/wiki/File:Black-headed_Heron_%28Ardea_melanocephala%29.jpg) |
+| Black-headed heron | *Ardea melanocephala* | Muhammad Mahdi Karim | [GFDL 1.2](GFDL-1.2.txt) | [Commons](https://commons.wikimedia.org/wiki/File:Black-headed_Heron_%28Ardea_melanocephala%29.jpg) |
 | Black-headed oriole | *Oriolus larvatus* | Diego Delso | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Orop%C3%A9ndola_enmascarada_%28Oriolus_larvatus%29,_parque_nacional_Kruger,_Sud%C3%A1frica,_2018-07-25,_DD_29_%28recortada%29.jpg) |
 | Black-winged kite | *Elanus caeruleus* | Tisha Mukherjee | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Black-winged_Kite_in_Tal_Chhapar_Sanctuary_November_2025_by_Tisha_Mukherjee_03.jpg) |
 | Black-winged stilt | *Himantopus himantopus* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Black-winged_stilt_%28Himantopus_himantopus%29_Pearaing.jpg) |
@@ -44,9 +34,9 @@ For all the files concerned, please see the category Supported by Wikimedia CH.
 | Blue-naped mousebird | *Urocolius macrourus* | Doug Janson | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Commons](https://commons.wikimedia.org/wiki/File:Urocolius_macrourus-20090110B.jpg) |
 | Bronze mannikin | *Spermestes cucullata* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Bronze_mannikin_%28Spermestes_cucullata_cucullata%29.jpg) |
 | Bronze sunbird | *Nectarinia kilimensis* | Steve Garvie | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Bronze_Sunbird_%28Nectarinia_kilimensis%29_male.jpg) |
-| Brown-crowned tchagra | *Tchagra australis* | https://www.flickr.com/photos/dkeats/ | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Brown-crowned_Tchagra.jpg) |
+| Brown-crowned tchagra | *Tchagra australis* | Derek Keats | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Brown-crowned_Tchagra.jpg) |
 | Cape robin-chat | *Dessonornis caffer* | Alan Manson | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Cape_Robin-Chat_%28Cossypha_caffra%292.jpg) |
-| Capped wheatear | *Oenanthe pileata* | https://www.flickr.com/photos/dkeats | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Capped_Wheatear,_Oenanthe_pileata_at_Suikerbosrand_Nature_Reserve,_Gauteng,_South_Africa.jpg) |
+| Capped wheatear | *Oenanthe pileata* | Derek Keats | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Capped_Wheatear,_Oenanthe_pileata_at_Suikerbosrand_Nature_Reserve,_Gauteng,_South_Africa.jpg) |
 | Cardinal woodpecker | *Dendropicos fuscescens* | Derek Keats from Johannesburg, South Africa | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Cardinal_Woodpecker_-_MALE,_Dendropicos_fuscescens_at_Pilanesberg_National_Park,_Northwest_Province,_South_Africa_%2814905279159%29.jpg) |
 | Cinnamon-chested bee-eater | *Merops oreobates* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Cinnamon-chested_bee-eater_%28Merops_oreobates%29.jpg) |
 | Collared sunbird | *Hedydipna collaris* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Collared_sunbird_%28Hedydipna_collaris%29_male.jpg) |
@@ -62,7 +52,7 @@ For all the files concerned, please see the category Supported by Wikimedia CH.
 | Egyptian goose | *Alopochen aegyptiaca* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Egyptian_goose_%28Alopochen_aegyptiaca%29_London.jpg) |
 | Emerald-spotted wood dove | *Turtur chalcospilos* | Bernard DUPONT from FRANCE | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Emerald-spotted_Wood_Dove_%28Turtur_chalcospilos%29_%2831377518065%29,_crop.jpg) |
 | Fork-tailed drongo | *Dicrurus adsimilis* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Fork-tailed_drongo_%28Dicrurus_adsimilis_adsimilis%29_Kruger_2.jpg) |
-| Golden-breasted starling | *Lamprotornis regius* | Photo by and (C)2007 Derek Ramsey (Ram-Man) | [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5) | [Commons](https://commons.wikimedia.org/wiki/File:Golden-breasted_Starling_Cosmopsarus_regius_Back_1000px.jpg) |
+| Golden-breasted starling | *Lamprotornis regius* | Derek Ramsey (Ram-Man) | [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5) | [Commons](https://commons.wikimedia.org/wiki/File:Golden-breasted_Starling_Cosmopsarus_regius_Back_1000px.jpg) |
 | Great white pelican | *Pelecanus onocrotalus* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Great_white_pelican_%28Pelecanus_onocrotalus%29.jpg) |
 | Greater blue-eared starling | *Lamprotornis chalybaeus* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Greater_blue-eared_starling_%28Lamprotornis_chalybaeus_nordmanni%29_Kruger.jpg) |
 | Greater flamingo | *Phoenicopterus roseus* | Giles Laurent | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:010_Greater_flamingos_male_and_female_in_the_Camargue_during_mating_season_Photo_by_Giles_Laurent.jpg) |
@@ -130,7 +120,7 @@ For all the files concerned, please see the category Supported by Wikimedia CH.
 | Silvery-cheeked hornbill | *Bycanistes brevis* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Silvery-cheeked_hornbills_%28Bycanistes_brevis%29_male_%28left%29_female_%28right%29_Arusha.jpg) |
 | Slate-coloured boubou | *Laniarius funebris* | D. Gordon E. Robertson | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Commons](https://commons.wikimedia.org/wiki/File:Slate-colored_Boubou,_Serengeti.jpg) |
 | Southern ground hornbill | *Bucorvus leadbeateri* | Bernard DUPONT from FRANCE | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Southern_Ground_Hornbill_%28Bucorvus_leadbeateri%29_male_%2812714625605%29,_crop.jpg) |
-| Speckled mousebird | *Colius striatus* | spacebirdy(also known as geimfyglið (:&gt; )=\| made with Sternenlaus-spirit) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Commons](https://commons.wikimedia.org/wiki/File:Colius_striatus_-_W%C3%BCstenhaus.jpg) |
+| Speckled mousebird | *Colius striatus* | spacebirdy | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Commons](https://commons.wikimedia.org/wiki/File:Colius_striatus_-_W%C3%BCstenhaus.jpg) |
 | Speckled pigeon | *Columba guinea* | peterichman from York, Yorkshire | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Specked_Pigeon_...Gambia_%2832709456610%29.jpg) |
 | Speke's weaver | *Ploceus spekei* | Charles J. Sharp | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Speke%27s_weaver_%28Ploceus_spekei%29.jpg) |
 | Spot-flanked barbet | *Tricholaema lacrymosa* | Francesco Veronesi from Italy | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Spot-flanked_Barbet_-_Kenya_IMG_5387.jpg) |
@@ -160,7 +150,7 @@ For all the files concerned, please see the category Supported by Wikimedia CH.
 | Yellow-billed kite | *Milvus aegyptius* | New Jersey Birds | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Milvus_aegyptius_-Limpopo,_South_Africa-8.jpg) |
 | Yellow-billed oxpecker | *Buphagus africanus* | Steve Garvie from Dunfermline, Fife, Scotland | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Yellow-billed_Oxpecker_%28Buphagus_africanus%29.jpg) |
 | Yellow-billed stork | *Mycteria ibis* | Marcusajohn63 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Yellow-billed_Stork.jpg) |
-| Yellow-breasted apalis | *Apalis flavida* | https://www.flickr.com/photos/dkeats | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Yellow-breasted_apalis,_Apalis_flavida.jpg) |
+| Yellow-breasted apalis | *Apalis flavida* | Derek Keats | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Yellow-breasted_apalis,_Apalis_flavida.jpg) |
 | Yellow-fronted canary | *Crithagra mozambica* | Derek Keats from Johannesburg, South Africa | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Commons](https://commons.wikimedia.org/wiki/File:Yellow-fronted_canary,_Crithagra_mozambicus,_at_Pilanesberg_National_Park,_Northwest_Province,_South_Africa_%2828381581952%29.jpg) |
 | Yellow-necked spurfowl | *Pternistis leucoscepus* | Christophe Eyquem | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Commons](https://commons.wikimedia.org/wiki/File:Francolin.jpg) |
 | Yellow-throated longclaw | *Macronyx croceus* | Ikiwaner | [GFDL 1.2](GFDL-1.2.txt) | [Commons](https://commons.wikimedia.org/wiki/File:Serengeti_Gelbkehlpieper1.jpg) |
