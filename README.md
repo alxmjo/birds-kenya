@@ -1,6 +1,6 @@
 # Birds of Kenya — Anki deck
 
-An [Anki](https://apps.ankiweb.net/) flashcard deck for learning to recognise 151 common birds of Kenya by sight.
+An [Anki](https://apps.ankiweb.net/) flashcard deck for learning to recognise 156 common birds of Kenya by sight.
 
 Each card shows a photograph on the front. The back gives the common name, the scientific name and a link to the bird's Wikipedia article. Photo credits are listed in [CREDITS.md](CREDITS.md) rather than on the cards, to keep reviews uncluttered.
 
@@ -22,7 +22,7 @@ The deck's note and card IDs never change between versions. Import a new release
 
 ## Contents
 
-- 151 species, one card each (Picture → Name)
+- 156 species, one card each (Picture → Name)
 - A **Look-alikes** subdeck that trains telling similar birds apart: flamingos, collared doves, hornbills, starlings, sparrows, fiscals, robin-chats, sunbirds, weavers, raptors, vultures and lapwings. Each card shows a photo and the names of the birds in its group. The back gives the answer, a short field mark and photos of the other birds in the group. These cards use different photos from the main deck, and the photo changes from day to day. The subdeck has its own settings (5 new cards a day) and is best started once the main cards for those birds are familiar.
 - Image filenames are hashed, so they don't give away the answer
 - Every image comes from Wikimedia Commons, apart from one from iNaturalist; its author and licence are listed in [CREDITS.md](CREDITS.md), linked from the deck description in Anki

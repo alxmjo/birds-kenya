@@ -1,4 +1,6 @@
-151 common Kenyan birds, one Picture → Name card each, plus a Look-alikes subdeck.
+156 common Kenyan birds, one Picture → Name card each, plus a Look-alikes subdeck.
+
+**New in v1.7:** five more species (tagged `batch_004`): Great egret, Spur-winged lapwing, Hooded vulture, African spoonbill and Black-headed weaver.
 
 **New in v1.6:** the Grosbeak weaver (tagged `batch_003`). Its photo comes from iNaturalist under CC BY-NC 4.0, so it may not be used commercially; see the README.
 
