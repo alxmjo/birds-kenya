@@ -61,6 +61,8 @@ The look-alike photos are listed in `photos.csv` by Commons file name, usually t
 
 If Wikimedia rate-limits your machine, push the new rows to a branch named `fetch/<anything>` instead. The *Fetch new birds* workflow then runs `fetch.py` on GitHub's servers and commits the photos and credits back to that branch.
 
+Leftover `fetch/*` and `candidates/*` branches are deleted by the *Clean up branches* workflow after each release. To clear them straight away, push to a branch named `cleanup/<anything>`.
+
 Releases are published automatically. When `VERSION` changes on `main`, a GitHub Action builds the deck and publishes it as release `v<VERSION>`, using `RELEASE_NOTES.md` as the release text.
 
 ## Corrections

@@ -1,0 +1,56 @@
+name: Clean up branches
+
+# Deletes leftover working branches: fetch/*, candidates/* and cleanup/*.
+# The chat session that maintains this deck can't delete branches itself,
+# so this workflow does it on GitHub's servers.
+#
+# - After each successful release, it deletes branches whose commits are all
+#   in main, plus candidates/* branches with no commits in the last day.
+#   Recent candidate branches are kept in case photos are still being chosen.
+# - Pushing to a branch named cleanup/<anything>, or running the workflow by
+#   hand, deletes every candidates/* branch as well, however recent.
+# A fetch/* branch with commits not yet in main is never deleted.
+on:
+  workflow_run:
+    workflows: ["Build and release deck"]
+    types: [completed]
+  push:
+    branches: ['cleanup/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      FORCE_CANDIDATES: ${{ github.event_name != 'workflow_run' }}
+    steps:
+      - name: Delete leftover branches
+        run: |
+          cutoff=$(date -u -d '1 day ago' +%s)
+          gh api --paginate "repos/$REPO/branches" --jq '.[].name' |
+            grep -E '^(fetch|candidates|cleanup)/' |
+            while read -r b; do
+              ahead=$(gh api "repos/$REPO/compare/main...$b" --jq '.ahead_by')
+              last=$(gh api "repos/$REPO/commits/$b" --jq '.commit.committer.date')
+              age_ok=$([ "$(date -u -d "$last" +%s)" -lt "$cutoff" ] && echo true || echo false)
+              delete=false
+              if [ "$ahead" = "0" ]; then
+                delete=true                      # everything on it is already in main
+              elif [[ "$b" == candidates/* ]] && { [ "$FORCE_CANDIDATES" = true ] || [ "$age_ok" = true ]; }; then
+                delete=true                      # contact sheets only; nothing the deck needs
+              elif [[ "$b" == cleanup/* ]]; then
+                delete=true                      # trigger branch
+              fi
+              if [ "$delete" = true ]; then
+                echo "Deleting $b (ahead of main by $ahead)"
+                gh api -X DELETE "repos/$REPO/git/refs/heads/$b"
+              else
+                echo "Keeping $b (ahead of main by $ahead, last commit $last)"
+              fi
+            done
